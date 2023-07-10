@@ -1,5 +1,8 @@
+file = input("Enter the name of the (.txt) file containing the turing machine instructions: ")
+
+raw = open(file, "r").read().replace('\n', '')
+
 # Load data from txt into states:
-raw = open("program3.txt", "r").read().replace('\n', '')
 data = raw.split(':')[1:-1]
 
 States = [i for i in range(30)]
@@ -37,7 +40,7 @@ while True:
     current = Strip[index]
     
     if (States[pos].get('END') != None):
-        print("SUCCESS") # Succeess (ACCEPTABLE STATE, NO FURTHER INPUT)
+        print("SUCCESS") # Success (ACCEPTABLE STATE, NO FURTHER INPUT)
         break
     
     if States[pos].get(current) == None:
